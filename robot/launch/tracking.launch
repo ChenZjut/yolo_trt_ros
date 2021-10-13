@@ -1,0 +1,14 @@
+<launch>
+   <node name="tracking_node" pkg="robot" type="tracking_node" output = "screen" >
+     <param name="speed_Kp" value="0.8"/>
+     <param name="speed_Kd" value="0.2"/>
+     <param name="angle_Kp" value="0.8"/>
+     <param name="angle_Kd" value="0.2"/>
+     <param name="max_linear_speed" value="0.5"/>
+     <param name="min_linear_speed" value="-0.2"/>
+     <param name="max_angle_speed" value="1.1"/>
+     <param name="target_distance" value="0.6"/>
+
+   </node>
+
+</launch>

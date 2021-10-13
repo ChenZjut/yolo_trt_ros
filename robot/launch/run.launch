@@ -1,0 +1,35 @@
+<launch>
+    <include file="$(find xf_ros)/launch/asr.launch" />
+    <include file="$(find xf_ros)/launch/tts.launch" />
+    <include file="$(find azure_kinect_ros_driver)/launch/driver.launch" />
+    <node name="go_room_node" pkg="robot" type="go_room_node" output="screen">
+        <param name="init_position_x" value="1.14" />
+        <param name="init_position_y" value="0.148" />
+        <param name="init_position_z" value="0.0" />
+        <param name="init_position_w" value="1.0" />
+
+        <param name="bedroom_x" value="3.43" />
+        <param name="bedroom_y" value="0.36" />
+        <param name="bedroom_z" value="0.0" />
+        <param name="bedroom_w" value="1.0" />
+
+        <param name="dining_x" value="5.83" />
+        <param name="dining_y" value="1.26" />
+        <param name="dining_z" value="0.0" />
+        <param name="dining_w" value="0.65" />
+
+        <param name="kitchen_x" value="6.06" />
+        <param name="kitchen_y" value="-0.01" />
+        <param name="kitchen_z" value="0.0" />
+        <param name="kitchen_w" value="-1.0" />
+
+    </node>
+    <node name="communication_node" pkg="robot" type="communication_node" output="screen" > 
+        <param name="continue_time" value="5" />
+    </node>
+   
+    <node name="navigation_node" pkg="robot" type="navigation_node" output="screen" />
+
+    <node name="detection_node" pkg="robot" type="detection_node" output="screen" />
+
+</launch>
